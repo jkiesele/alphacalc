@@ -70,18 +70,15 @@ class CMakeBuild(build_ext):
              
 setup(
     name='annealing_helpers',
-    version='0.11',
+    version='0.1.0',
     author='Jan Kieseler',
-    author_email=' ',
-    description='description ',
+    author_email='jan.kieseler@cern.ch',
+    url='https://github.com/jkiesele/annealing_helpers',
+    description='A package to perform calculations for silicon annealing times in a performant way',
     long_description='',
-    # tell setuptools to look for any packages under 'src'
     packages=find_packages('src'),
-    # tell setuptools that all packages will be under the 'src' directory
-    # and nowhere else
     package_dir={'':'src'},
     ext_modules=[CMakeExtension('annealing_helpers/alphacalc')],
-    # add custom build_ext command
     cmdclass=dict(build_ext=CMakeBuild),
     zip_safe=False,
 )
